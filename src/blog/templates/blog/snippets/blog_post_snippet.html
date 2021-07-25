@@ -23,7 +23,7 @@
 				<p class="card-text">{{blog_post.body|safe|truncatechars:180}}  
 					<a href="{% url 'blog:detail' blog_post.slug %}">batafsil</a>
 				</p>
-				{% if blog_post.author == request.user and request.user.is_superuser %}
+				{% if blog_post.author == request.user or request.user.is_superuser %}
 					<a href="{% url 'blog:edit' blog_post.slug %}" class="btn btn-primary">Yangilash</a>
 					<a href="{% url 'blog:delete' blog_post.slug %}" class='btn btn-danger'>O'chirish</a>
 				{% endif %}
