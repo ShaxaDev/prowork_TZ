@@ -22,7 +22,7 @@
 			<div class="card-body mt-2 mb-2">
 			  <h2 class="card-title">{{blog_post.title}}</h2>
 			  <p class="card-text">{{blog_post.body|safe}}</p>
-			  {% if blog_post.author == request.user and request.user.is_superuser %}
+			  {% if blog_post.author == request.user or request.user.is_superuser %}
 			  	<a href="{% url 'blog:edit' blog_post.slug %}" class="btn btn-primary">Yangilash</a>
 				<a href="{% url 'blog:delete' blog_post.slug %}" class='btn btn-danger'>O'chirish</a>
 				{% endif %}
