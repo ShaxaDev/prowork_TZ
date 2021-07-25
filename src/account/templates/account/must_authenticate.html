@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+	<div class="d-flex flex-column">
+		<p class="m-auto">Ro'yxatdan o'ting yoki saytga kiring! </p>
+		<p class="m-auto">
+			<a href="{% url 'register' %}">Ro'yxatdan o'tish</a> or 
+			<a href="{% url 'login' %}">Kirish</a>.
+		</p>
+	</div>
+</div>
+
+{% endblock content %}
+
+
